@@ -63,24 +63,26 @@ export const reducer = (state, action) => {
               };
             return [...state, newItem];
         case 'CLEAR':
-            const newItem = {
-                name: action.name ,
-                
-              };
-            return {
-                ...state,
-                model: action.payload
-            }
+            return state.filter(item => {
+                if (item.completed) {
+                  return false;
+                } else {
+                  return true;
+                }
+              })
+            
         case 'TOGGLE':
-            const item = {
-                name: action.name ,
-                
-                completed: true,
-              };
-            return {
-                ...state,
-                model: action.payload
-            }
+             return state.map(item => {
+                if (item.id === action.id) {
+                  return {
+                    ...item,
+                    completed: !item.completed
+                  };
+                } else {
+                  return item;
+                }
+              })
+            
         default:
             return state
     }
