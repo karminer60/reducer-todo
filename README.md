@@ -20,7 +20,7 @@ In this project, you build an app that let's you display a todo list from reduce
 - [ +] Add your team lead as collaborator on Github.
 - [ +] Clone your OWN version of the repository in your terminal.
 - [+ ] CD into the project base directory `cd reducer-todo`.
-- [ ] Create a new react app running `npx create-react-app todo --use-npm`.
+- [ +] Create a new react app running `npx create-react-app todo --use-npm`.
 - [ ] CD into the react app directory `cd todo`.
 - [ ] Start up the app using `npm start`.
 - [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
