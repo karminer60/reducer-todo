@@ -62,7 +62,21 @@ export const reducer = (state, action) => {
                 completed: false
               };
             return [...state, newItem];
-        case 'UPDATE_MODEL':
+        case 'CLEAR':
+            const newItem = {
+                name: action.name ,
+                
+              };
+            return {
+                ...state,
+                model: action.payload
+            }
+        case 'TOGGLE':
+            const item = {
+                name: action.name ,
+                
+                completed: true,
+              };
             return {
                 ...state,
                 model: action.payload

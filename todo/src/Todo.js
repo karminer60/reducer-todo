@@ -4,8 +4,8 @@ const Todo = props => {
   return (
     <div 
     onClick={() => dispatch({ type: "TOGGLE" })}
-    className={`item${props.item.completed ? ' completed' : ''}`}>
-      <p>{props.item.name}</p>
+    className={`item${props.name ? ' completed' : ''}`}>
+      <p>{props.name}</p>
     </div>
   );
 };
