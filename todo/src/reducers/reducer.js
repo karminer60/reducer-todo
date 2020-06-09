@@ -1,32 +1,32 @@
 
 export const initialState = [
     {
-      item: "Finish Assignment",
+      name: "Finish Assignment",
       id: 123,
       completed: false
     },
     {
-      item: "Clean room",
+      name: "Clean room",
       id: 124,
       completed: false
     },
     {
-      item: "Go grocery shopping",
+      name: "Go grocery shopping",
       id: 1235,
       completed: false
     },
     {
-      item: "Read book",
+      name: "Read book",
       id: 1246,
       completed: false
     },
     {
-      item: "Make dinner",
+      name: "Make dinner",
       id: 1237,
       completed: false
     },
     {
-      item: "Clean bathroom",
+      name: "Clean bathroom",
       id: 1248,
       completed: false
     }
@@ -56,10 +56,12 @@ export const reducer = (state, action) => {
     // same as if, else if, ... , else
     switch (action.type) {
         case 'ADD':
-            return [
-                ...state,
-                {item: action.item}
-            ]
+            const newItem = {
+                name: action.name ,
+                id: new Date(),
+                completed: false
+              };
+            return [...state, newItem];
         case 'UPDATE_MODEL':
             return {
                 ...state,
@@ -68,7 +70,10 @@ export const reducer = (state, action) => {
         default:
             return state
     }
-}
+
+
+
+    }
 
 
 

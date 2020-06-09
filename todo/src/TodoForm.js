@@ -16,9 +16,13 @@ const TodoForm = (props) => {
         setNewToDo(e.target.value);
     };
 
+    const handleSubmit = e => {
+      e.preventDefault();
+      props.dispatch({type: "ADD" , name:newTodo});
+    };
    
         return (
-            <form onSubmit={() => props.dispatch ({ type: "ADD" , item:newTodo })}>
+            <form onSubmit={handleSubmit}>
               
               <input
                 type="text"
