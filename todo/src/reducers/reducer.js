@@ -1,11 +1,37 @@
-import React, { useState, useReducer } from "react";
 
-export const initialState =
-{
-    item: 'Learn about reducers',
-    completed: false,
-    id: 3892987589
-}
+export const initialState = [
+    {
+      item: "Finish Assignment",
+      id: 123,
+      completed: false
+    },
+    {
+      item: "Clean room",
+      id: 124,
+      completed: false
+    },
+    {
+      item: "Go grocery shopping",
+      id: 1235,
+      completed: false
+    },
+    {
+      item: "Read book",
+      id: 1246,
+      completed: false
+    },
+    {
+      item: "Make dinner",
+      id: 1237,
+      completed: false
+    },
+    {
+      item: "Clean bathroom",
+      id: 1248,
+      completed: false
+    }
+  ];
+
 
 
 
@@ -29,11 +55,11 @@ export const reducer = (state, action) => {
 
     // same as if, else if, ... , else
     switch (action.type) {
-        case 'INCREMENT_YEAR':
-            return {
+        case 'ADD':
+            return [
                 ...state,
-                year: state.year + 1
-            }
+                {item: action.item}
+            ]
         case 'UPDATE_MODEL':
             return {
                 ...state,
