@@ -1,11 +1,15 @@
 import React, { useState, useReducer } from "react";
 
-const dispatch = action => {
-    if (!hasOwnProperty('type')) throw new Error("needs a type property")
-    currentState = reducer(currentState, action)
+export const initialState = 
+{
+    item: 'Learn about reducers',
+    completed: false,
+    id: 3892987589
   }
+
+
   
-  const reducer = (state, action) => {
+  export const reducer = (state, action) => {
     // build a case for each action type that could possibly be passed in tothe reducer
     // if (action.type === 'INCREMENT_YEAR') {
     //   return {
